@@ -1,10 +1,13 @@
 const mysql = require('mysql');
+const config = require('./config/configuration.js');
 
 const db = mysql.createConnection({
-    host: 'sql11.freemysqlhosting.net',
-    user: 'sql11401811',
-    password: 'JfIFUtwcru',
-    database: 'sql11401811'
+    host: config.db.host,
+    user: config.db.username,
+    password: config.db.password,
+    database: config.db.database,
+    dialect: config.db.dialect,
+    port: config.db.port
 });
 
 db.connect((err) => {

@@ -5,39 +5,38 @@ var path = require("path");
 var Sequelize = require("sequelize");
 var basename = path.basename(__filename);
 var env = process.env.NODE_ENV || "development";
-var config = require(__dirname + "/../config/db.js")[env];
+const config = require('../config/configuration.js');
 
 let db = {};
 let sequelize;
 
-if (config.use_env_variable) {
-	sequelize = new Sequelize(process.env[config.use_env_variable], config);
+if (config.db) {
+    sequelize = new Sequelize(
+        config.db.database,
+        config.db.username,
+        config.db.password, { host: config.db.host, dialect: config.db.dialect }
+    );
 } else {
-	sequelize = new Sequelize(
-		config.database,
-		config.username,
-		config.password,
-		{ host: config.host, dialect: config.dialect }
-	);
+    console.log('Missing db config!');
 }
-console.log(fs.readdirSync(__dirname));
+// console.log(fs.readdirSync(__dirname));
 fs.readdirSync(__dirname)
-	.filter(file => {
-		return (
-			file.indexOf(".") !== 0 &&
-			file !== basename &&
-			file.slice(-3) === ".js" && !~file.indexOf("dbconnection")
-		);
-	})
-	.forEach(file => {
-		var model = sequelize["import"](path.join(__dirname, file));
-		db[model.name] = model;
-	});
+    .filter(file => {
+        return (
+            file.indexOf(".") !== 0 &&
+            file !== basename &&
+            file.slice(-3) === ".js" && !~file.indexOf("dbconnection")
+        );
+    })
+    .forEach(file => {
+        var model = sequelize["import"](path.join(__dirname, file));
+        db[model.name] = model;
+    });
 
 Object.keys(db).forEach(modelName => {
-	if (db[modelName].associate) {
-		db[modelName].associate(db);
-	}
+    if (db[modelName].associate) {
+        db[modelName].associate(db);
+    }
 });
 
 db.sequelize = sequelize;

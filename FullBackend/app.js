@@ -6,6 +6,7 @@ const mysql = require('mysql');
 const path = require('path');
 const app = express();
 const models = require('./models/index');
+const config = require('./config/configuration.js')
 
 // models.sequelize.sync();
 
@@ -24,24 +25,6 @@ const tipDogadjajaRoutes = require('./routes/tipdogadjaja.router')
 const authRoutes = require('./routes/auth.router')
 const izvjestajRoutes = require('./routes/izvjestaj.router')
 
-// create connection to database
-// the mysql.createConnection function takes in a configuration object which contains host, user, password and the database name.
-const db = mysql.createConnection({
-    host: 'sql11.freemysqlhosting.net',
-    user: 'sql11401811',
-    password: 'JfIFUtwcru',
-    database: 'sql11401811'
-});
-
-// connect to database
-db.connect((err) => {
-    if (err) {
-        throw err;
-    }
-    console.log('Connected to database');
-});
-global.db = db;
-
 // configure middleware
 //app.set('port', process.env.port || port); // set express to use this port
 app.set('views', __dirname + '/views'); // set express to look in this folder to render our view
@@ -52,19 +35,6 @@ app.use(express.static(path.join(__dirname, 'public'))); // configure express to
 app.use(fileUpload()); // configure fileupload
 app.use(cors());
 
-
-app.use((req, res, next) => {
-    res.header("Acces-Control-Allow-Origin", "*");
-    res.header(
-        "Acces-Control-Allow-Headers",
-        "Origin, X-Requested-With, Content-Type, Accept, Authorization"
-    );
-    if (req.method === 'OPTIONS') {
-        res.header('Acces-Control-Allow-Methods', 'PUT, POST, PATCH, DELETE, GET');
-        return res.status(200).json({});
-    }
-    next();
-});
 //require('./routes')(app);
 
 app.use('/uloga', ulogaRoutes);
