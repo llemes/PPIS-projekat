@@ -1,0 +1,25 @@
+<div class="wrapper">
+	<ngb-tabset class="tabset1">
+		<ngb-tab title="Status promjena">
+			<ng-template ngbTabContent class ="content">
+        <app-change-status></app-change-status>
+		<app-change-status></app-change-status>
+		<app-change-status></app-change-status>
+        <app-change-status></app-change-status>
+			</ng-template>
+		</ngb-tab>
+		<ngb-tab title="Zahtjevi za promjenama">
+			<ng-template ngbTabContent class="content">
+		<app-helpdesk-changes></app-helpdesk-changes>
+		<app-helpdesk-changes></app-helpdesk-changes>
+		<app-helpdesk-changes></app-helpdesk-changes>
+		<app-helpdesk-changes></app-helpdesk-changes>
+			</ng-template>
+		</ngb-tab>
+		<ngb-tab title="Lista događaja">
+			<ng-template ngbTabContent class="content">
+        <app-helpdesk-events></app-helpdesk-events>
+			</ng-template>
+		</ngb-tab>
+	</ngb-tabset>
+</div>

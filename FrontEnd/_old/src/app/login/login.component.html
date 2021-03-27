@@ -1,0 +1,39 @@
+<div class="modal-fade">
+  <div class="modal-header col-md-12">
+    <div class="col-md-12 naslov">Prijava na račun</div>
+  </div>
+
+<div class="modal-body">
+  <div class="content">
+    <div class="text col-md-12">Molimo prijavite se na račun:</div>
+    <div *ngIf="badLogin" class="red col-md-12" style="text-align: center">Incorrect username or password</div>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="row col-md-12 form-group">
+          <div class="col-md-4 text_alignment"><label for="username">Username:</label></div>
+          <div class="col-md-8"><input type="text" formControlName="username" class="input borders form-control" 
+            placeholder="Korisničko ime" [ngClass]="{ 'is-invalid': submitted && f.username.errors }"></div>
+          <div *ngIf="submitted && f.username.errors" class="col-md-12">
+              <div class="col-md-3">
+                </div>
+              <div *ngIf="f.username.errors.required" class="red col-md-9 col-md-offset-3">Username is required</div>
+          </div>
+      </div>
+      <div class="row col-md-12 form-group">
+          <div class="col-md-4 text_alignment"><label for="password">Password:</label></div>
+          <div class="col-md-8"><input type="password" formControlName="password" class="input borders form-control" 
+            placeholder="Šifra" [ngClass]="{ 'is-invalid': submitted && f.password.errors }"></div>
+          <div *ngIf="submitted && f.password.errors" class="col-md-12">
+              <div class="col-md-3">
+                </div>
+              <div *ngIf="f.password.errors.required" class="red col-md-9 col-md-offset-3">Password is required</div>
+          </div>
+      </div>
+      <div class="row col-md-12 form-group">
+          <div class="col-md-3">
+          </div>
+        <button class="btn col-md-6 col-md-offset-3" type="submit">Prijava</button>
+      </div>
+  </form>
+</div>
+</div>
+</div>

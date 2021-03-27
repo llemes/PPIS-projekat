@@ -1,0 +1,18 @@
+.row{
+    padding: 0%;
+  }
+  .col{
+    border: 1px solid white;
+  }
+  .btn{
+    background-color:#0E4168;
+    color: white;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 5%;
+    float: right
+  }
+hr{
+  border-top: 1px solid white;
+}
+table thead th { color: white; font-size:10pt; }

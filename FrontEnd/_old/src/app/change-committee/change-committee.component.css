@@ -1,0 +1,50 @@
+.row{
+  margin: 0.5%;
+  -webkit-box-shadow: 8px 10px 23px 0.1px rgba(3,19,31,1);
+  -moz-box-shadow: 8px 10px 23px 0.1px rgba(3,19,31,1);
+  box-shadow: 8px 10px 23px 0.1px rgba(3,19,31,1);
+}
+.col{
+  background-color: #0E4168;
+  border: 0.5px solid #052842
+
+}
+
+.button {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.8);
+  background: rgb(5, 40, 66);
+  padding: 6px 9px;
+  border-radius: 4px;
+  font-weight: normal;
+  text-transform: uppercase;
+  transition: all 0.2s ease-in-out;
+  border: none;
+  margin: 1%
+}
+
+.glow-button:hover {
+  color: rgba(255, 255, 255, 1);
+  background: rgb(26, 118, 194);
+  box-shadow: 0 5px 15px rgba(36, 156, 255, 0.6);
+}
+.form-prioritet-jn{
+    color:white;
+    background-color: green;
+}
+.form-prioritet-n{
+    color:white;
+    background-color: blue;
+}
+.form-prioritet-s{
+    color:white;
+    background-color: orange;
+}
+.form-prioritet-v{
+    color:black;
+    background-color: yellow;
+}
+.form-prioritet-jv{
+    color:white;
+    background-color: red;
+}

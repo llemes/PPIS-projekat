@@ -1,0 +1,12 @@
+.page-footer {
+  padding-bottom:50px;
+  }
+  .footer-copyright{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background:rgba(14, 65, 104, 0.7);
+    color: white;
+    text-align: center; 
+  }

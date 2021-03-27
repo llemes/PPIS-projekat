@@ -1,0 +1,114 @@
+<div class="row">
+  <div class="col col-sm-12">
+      <div class="text-center">
+          <legend>Prikaz svih korisnika</legend></div>
+  </div>
+  <div class="col col-sm-12">
+    <br>
+  <table class="table">
+      <thead>
+        <th><div class="text-center">Username</div></th>
+        <th><div class="text-center">Email</div></th>
+        <th><div class="text-center">Uloga</div></th>
+        <th><div class="text-center">Kreiran</div></th>
+      </thead>
+      <tbody>
+          <tr *ngFor="let korisnik of korisnici">
+            <td>{{korisnik.username}}</td>
+            <td>{{korisnik.email}}</td>
+            <td>{{korisnik.uloga}}</td>
+            <td>{{korisnik.kreiran}}</td>
+           </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<br>
+
+
+<div class="row">
+    <div class="col col-sm-4">
+        <div class="text-center">
+            <legend>Broj registovanih korisnika</legend>
+            55</div>
+            <!--<legend>{{korisnik.ukunpo}}</legend>-->
+            <hr>
+    </div>
+    <div class="col col-sm-4">
+        <div style="display: block">
+            <div class="text-center">
+            <legend>Učestalost promjena</legend></div>
+              <canvas baseChart
+                      [data]="pieChartData1"
+                      [labels]="pieChartLabels1"
+                      [chartType]="pieChartType1"
+                      (chartHover)="chartHovered($event)"
+                      (chartClick)="chartClicked($event)"></canvas>
+                      <br>
+      </div>
+    </div>
+    <div class="col col-sm-4">
+        <div style="display: block">
+          <div class="text-center">
+          <legend>Tipovi događaja</legend></div>
+            <canvas baseChart
+                    [data]="pieChartData"
+                    [labels]="pieChartLabels"
+                    [chartType]="pieChartType"
+                    (chartHover)="chartHovered($event)"
+                    (chartClick)="chartClicked($event)"></canvas>
+                    <br>
+    </div>
+  </div>
+  </div>
+  <br>
+
+
+  <div class="row">
+      <div class="col col-sm-12">
+          <div class="text-center">
+              <legend>Prikaz promjena</legend></div>
+      </div>
+      <div class="col col-sm-12">
+      <br>
+      <table class="table">
+          <thead>
+            <th><div class="text-center">Opis</div></th>
+            <th><div class="text-center">Status</div></th>
+            <th><div class="text-center">Prioritet</div></th>
+          </thead>
+          <tbody>
+              <tr *ngFor="let promjena of promjene">
+                <td>{{promjena.opis}}</td>
+                <td>{{promjena.status}}</td>
+                <td>{{promjena.prioritet}}</td>
+               </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <br>
+
+  
+    <div class="row">
+        <div class="col col-sm-12">
+            <div class="text-center">
+                <legend>Prikaz događaja</legend></div>
+        </div>
+        <div class="col col-sm-12">
+        <br>
+        <table class="table">
+            <thead>
+              <th><div class="text-center">Opis</div></th>
+              <th><div class="text-center">Prioritet</div></th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let togadjaj of dogadjaji">
+                  <td>{{dogadjaj.opis}}</td>
+                  <td>{{dogadjaj.prioritet}}</td>
+                 </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+  

@@ -1,0 +1,73 @@
+:host ::ng-deep .modal-header {
+    color: #FFFFFF;
+    background:rgba(14, 65, 104, 0.7);
+    border-color: #0E4168;
+    font-size: 18px;
+    text-align: center
+  }
+  :host ::ng-deep .tabset1 a.nav-link.active {
+    font-weight: bold;
+    font-size: 19px
+  }
+  .modal-body{
+    background:rgba(7, 31, 50, 0.8);
+    color: #FFFFFF;
+    padding: 5%;
+  
+  }
+  .wrapper{
+    background-color: #0E4168;
+    margin-left: 35%;
+    margin-right: 35%;
+  }
+  .row{
+    padding-top: 5%;
+  }
+  .btn{
+    background-color:#0E4168;
+    color: white;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align:center;
+  }
+
+  .text{
+      text-align: center
+  }
+
+  .input{
+    background-color:#0E4168;
+    border-color: white;
+    border: 1px;
+    color: white;
+  }
+
+  .naslov{
+    padding-top: 5%;
+    margin-bottom:5%;
+  }
+
+  .borders{
+  border-radius: 10px;
+  border: 2px solid white;
+  padding: 2%;
+  }
+
+  .text_alignment{
+    padding-top: 2%;
+  }
+  .modal-fade{
+    border-radius: 0px;
+    border: 0px;
+    border-color:#0E4168; 
+  
+  }
+  .modal-header{
+    background:rgba(14, 65, 104, 0.9);
+    border-top-left-radius: 0rem;
+    border-top-right-radius: 0rem;
+  }
+
+  .red{
+    color:crimson;
+  }

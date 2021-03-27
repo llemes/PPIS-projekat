@@ -1,0 +1,28 @@
+<div class="row">
+	<div class="col" style=" display: flex;align-items: center;justify-content: center;">
+		Promjena1
+	</div>
+	<div class="col"style=" display: flex;align-items: center;justify-content: center;">
+		Vrsta promjene
+	</div>
+	<div class="col">
+		<select class="form-control">
+			<option>Nije postavljeno</option>
+			<option>Razvojni tim 1</option>
+			<option>Razvojni tim 2</option>
+		</select> 
+	</div>
+<div class="col">
+	<select [className]=default.style (ngModelChange)="setStatus($event)" [(ngModel)]="default" >
+			<option *ngFor="let status of Statuses" [(ngValue)]="status">
+				{{status.text}}
+			</option>
+		</select>
+</div>
+	<div class="col">
+		<div class ="controlBtn">
+				<input class="button glow-button" type="button"value="Započni">
+				<input class="button glow-button" type="button"value="X">
+		</div>
+ </div>
+</div>

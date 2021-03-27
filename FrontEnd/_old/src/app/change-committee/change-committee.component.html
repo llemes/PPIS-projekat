@@ -1,0 +1,28 @@
+<div class="row">
+    <div class="col col-sm-3">
+    Opis promjene
+    </div>
+    <div class="col col-sm-3">
+    Kategorija promjene
+    </div>
+    <div class="col col-sm-2">
+            <select [className]=default.style (ngModelChange)="setPrioritet($event)" [(ngModel)]="default" >
+                <option *ngFor="let prioritet of Prioriteti" [(ngValue)]="prioritet">
+                  {{prioritet.text}}
+                </option>
+              </select>
+    </div>
+    <div class="col col-sm-2">
+        <div class="col-sm-12">
+            <input class="button glow-button col-sm-12" type="button" value="PSO File">
+          </div>
+    </div>
+    <div class="col col-sm-2">
+      <div class="col-sm-12">
+        <input class="button glow-button col-sm-12" type="button" value="Pošalji">
+      </div>
+      <div class="col-sm-12">
+        <input class="button glow-button col-sm-12" type="button" value="Odbaci">
+        </div>
+    </div>
+</div>

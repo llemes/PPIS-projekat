@@ -3,7 +3,6 @@ import {Korisnik} from '../app/_services/korisnik'
 import {ModalService} from'../app/_services/modal.service'
 import {Router} from "@angular/router"
 
-
 @Component({
   selector: 'my-app',
   templateUrl: './app.component.html',
