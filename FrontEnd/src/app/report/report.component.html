@@ -1,0 +1,322 @@
+<div class="card">
+<div class="row"><!--HELPDESK-->
+  <div class="col col-sm-12">
+      <div class="text-center">
+          <legend>Prikaz svih korisnika</legend></div>
+  </div>
+  <div class="col col-sm-12">
+    <br>
+  <table class="table">
+      <thead>
+        <th><div class="text-center">Ime</div></th>
+        <th><div class="text-center">Prezime</div></th>
+        <th><div class="text-center">Username</div></th>
+        <th><div class="text-center">Uloga</div></th>
+        <th></th>
+      </thead>
+      <tbody>
+          <tr *ngFor="let korisnik of listaKorisnika">
+            <td class="text-center">{{korisnik.firstName}}</td>
+            <td class="text-center">{{korisnik.lastName}}</td>
+            <td class="text-center">{{korisnik.username}}</td>
+            <td class="text-center">{{korisnik.naziv}}</td>
+            <td>
+              </td>
+           </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<br>
+
+
+<div class="row" *ngIf="Helpdesk"><!--HELPDESK-->
+    <div class="col col-sm-3">
+        <div class="text-center">
+            <legend>Broj registovanih korisnika</legend>
+            <legend>{{broj}}</legend></div>
+            <hr>
+    </div>
+    <div class="col col-sm-4">
+        <div style="display: block">
+            <div class="text-center">
+            <legend>Učestalost promjena</legend></div>
+              <canvas baseChart
+                      [data]="pieChartData1"
+                      [labels]="pieChartLabels1"
+                      [chartType]="pieChartType1"
+                      [options]="chartOptions"
+                      ></canvas>
+                      <br>
+      </div>
+    </div>
+    <div class="col col-sm-5">
+        <div style="display: block">
+          <div class="text-center">
+          <legend>Tipovi događaja</legend></div>
+            <canvas baseChart
+                    [data]="pieChartData"
+                    [labels]="pieChartLabels"
+                    [chartType]="pieChartType"
+                    [options]="chartOptions"></canvas>
+                    <br>
+    </div>
+  </div>
+  </div>
+  <br>
+  <div class="row">
+      <div class="col col-sm-12">
+          <div class="text-center">
+              <legend>Promjene</legend></div>
+      </div>
+     </div>
+    <br>
+    <div class="row" *ngIf="Helpdesk"><!--HELPDESK-->
+      <div class="col col-sm-12">
+          <div class="text-center">
+              <legend>Promjene u stanju cekanja i u toku rjesavanja</legend></div>
+      </div>
+      <div class="col col-sm-12">
+      <br>
+      <table class="table">
+          <thead>
+            <th><div class="text-center">Opis</div></th>
+            <th><div class="text-center">Kategorija</div></th>
+            <th><div class="text-center">Prioritet</div></th>
+          </thead>
+          <tbody>
+              <tr *ngFor="let promjena of nizPromjena">
+                <td class="text-center">{{promjena.opis}}</td>
+                <td class="text-center">{{promjena.nazivKategorije}}</td>
+                <td class="text-center">{{promjena.prioritetPromjene}}</td>
+               </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  <br>
+
+  <div class="row"*ngIf="Korisnik"><!--KORISNIK-->
+    <div class="col col-sm-12">
+        <div class="text-center">
+            <legend>Promjene koje je prijavio user</legend></div>
+    </div>
+    <div class="col col-sm-12">
+    <br>
+    <table class="table">
+        <thead>
+          <th><div class="text-center">Opis</div></th>
+          <th><div class="text-center">Kategorija</div></th>
+          <th><div class="text-center">Prioritet</div></th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let promjena of nizPromjenePrijavio">
+              <td class="text-center">{{promjena.opis}}</td>
+              <td class="text-center">{{promjena.nazivKategorije}}</td>
+              <td class="text-center">{{promjena.prioritetPromjene}}</td>
+             </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+<br>
+
+<div class="row" *ngIf="Komitet"><!--KOMITET-->
+  <div class="col col-sm-12">
+      <div class="text-center">
+          <legend>Promjene koje treba revidirati komitet</legend></div>
+  </div>
+  <div class="col col-sm-12">
+  <br>
+  <table class="table">
+      <thead>
+        <th><div class="text-center">Opis</div></th>
+        <th><div class="text-center">Status</div></th>
+        <th><div class="text-center">Prioritet</div></th>
+      </thead>
+      <tbody>
+          <tr *ngFor="let promjena of nizPromjeneOdobrava">
+            <td class="text-center">{{promjena.opis}}</td>
+            <td class="text-center">{{promjena.nazivKategorije}}</td>
+            <td class="text-center">{{promjena.prioritetPromjene}}</td>
+           </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<br>
+
+<div class="row" *ngIf="Developer"><!--DEVELOPER-->
+  <div class="col col-sm-12">
+      <div class="text-center">
+          <legend>Promjene koje treba odraditi developer</legend></div>
+  </div>
+  <div class="col col-sm-12">
+  <br>
+  <table class="table">
+      <thead>
+        <th><div class="text-center">Opis</div></th>
+        <th><div class="text-center">Status</div></th>
+        <th><div class="text-center">Prioritet</div></th>
+      </thead>
+      <tbody>
+          <tr *ngFor="let promjena of nizPromjeneIzvrsava">
+            <td class="text-center">{{promjena.opis}}</td>
+            <td class="text-center">{{promjena.nazivKategorije}}</td>
+            <td class="text-center">{{promjena.prioritetPromjene}}</td>
+           </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<br>
+
+<div class="row" *ngIf="!Helpdesk"><!--SVI MOGU VIDJETI OSIM HELPDESKA-->
+  <div class="col col-sm-12">
+      <div class="text-center">
+          <legend>Zadnja historija promjene</legend></div>
+  </div>
+  <div class="col col-sm-12">
+  <br>
+  <table class="table">
+      <thead>
+        <th><div class="text-center">Datum</div></th>
+        <th><div class="text-center">Status</div></th>
+        <th><div class="text-center">Izmjena</div></th>
+      </thead>
+      <tbody>
+          <tr *ngFor="let promjena of nizZadnjaHistorijaPromjene">
+            <td class="text-center">{{promjena.datumDo |  date:'MM/dd/yyyy'}}</td>
+            <td class="text-center">{{promjena.status}}</td>
+            <td class="text-center">{{promjena.korisnik}}</td>
+           </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<br>
+
+<div class="row"*ngIf="!Helpdesk"><!--SVI MOGU VIDJETI OSIM HELPDESKA-->
+  <div class="col col-sm-12">
+      <div class="text-center">
+          <legend>Prva historija promjene</legend></div>
+  </div>
+  <div class="col col-sm-12">
+  <br>
+  <table class="table">
+      <thead>
+        <th><div class="text-center">Datum</div></th>
+        <th><div class="text-center">Status</div></th>
+        <th><div class="text-center">Izmjena</div></th>
+      </thead>
+      <tbody>
+          <tr *ngFor="let promjena of nizPrvaHistorijaPromjene">
+            <td class="text-center">{{promjena.datumOd |  date:'MM/dd/yyyy'}}</td>
+            <td class="text-center">{{promjena.status}}</td>
+            <td class="text-center">{{promjena.korisnik}}</td>
+           </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<br>
+
+<div class="row">
+  <div class="col col-sm-12">
+      <div class="text-center">
+          <legend>Dogadjaji</legend></div>
+  </div>
+ </div>
+<br>
+    <div class="row"*ngIf="Helpdesk"><!--HELPDESK-->
+        <div class="col col-sm-12">
+            <div class="text-center">
+                <legend>Prikaz događaja</legend></div>
+        </div>
+        <div class="col col-sm-12">
+        <br>
+        <table class="table">
+            <thead>
+              <th><div class="text-center">Opis</div></th>
+              <th><div class="text-center">Prioritet</div></th>
+              <th><div class="text-center">Tip</div></th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let dogadjaj of nizDogadjaja">
+                  <td class="text-center">{{dogadjaj.dogadjaj}}</td>
+                  <td class="text-center">{{dogadjaj.naziv}}</td>
+                  <td class="text-center">{{dogadjaj.tipDogadjaja}}</td>
+                 </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    <br>
+    <div class="row"*ngIf="Korisnik"><!--KORISNIK-->
+      <div class="col col-sm-12">
+          <div class="text-center">
+              <legend>Dogadjaji koje je user prijavio</legend></div>
+      </div>
+      <div class="col col-sm-12">
+      <br>
+      <table class="table">
+          <thead>
+            <th><div class="text-center">Opis</div></th>
+            <th><div class="text-center">Prioritet</div></th>
+            <th><div class="text-center">Tip</div></th>
+          </thead>
+          <tbody>
+              <tr *ngFor="let dogadjaj of nizDogadjajInicirao">
+                <td class="text-center">{{dogadjaj.dogadjaj}}</td>
+                <td class="text-center">{{dogadjaj.naziv}}</td>
+                <td class="text-center">{{dogadjaj.tipDogadjaja}}</td>
+               </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  <br>
+  <div class="row"*ngIf="!Helpdesk"><!--SVI MOGU VIDJETI OSIM HELPDESKA-->
+    <div class="col col-sm-12">
+        <div class="text-center">
+            <legend>Zadnja historija dogadjaja</legend></div>
+    </div>
+    <div class="col col-sm-12">
+    <br>
+    <table class="table">
+        <thead>
+          <th><div class="text-center">Datum</div></th>
+          <th><div class="text-center">Status</div></th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let dogadjaj of nizZadnjaHistorijaDogadjaja">
+              <td class="text-center">{{dogadjaj.datumDo |  date:'MM/dd/yyyy'}}</td>
+              <td class="text-center">{{dogadjaj.status}}</td>
+             </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+<br>
+<div class="row"*ngIf="!Helpdesk"><!--SVI MOGU VIDJETI OSIM HELPDESKA-->
+  <div class="col col-sm-12">
+      <div class="text-center">
+          <legend>Prva historija dogadjaja</legend></div>
+  </div>
+  <div class="col col-sm-12">
+  <br>
+  <table class="table">
+      <thead>
+          <th><div class="text-center">Datum</div></th>
+          <th><div class="text-center">Status</div></th>
+      </thead>
+      <tbody>
+          <tr *ngFor="let dogadjaj of nizPrvaHistorijaDogadjaja">
+            <td class="text-center">{{dogadjaj.datumOd  |  date:'MM/dd/yyyy'}}</td>
+            <td class="text-center">{{dogadjaj.status}}</td>
+           </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<br>

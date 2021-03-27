@@ -1,0 +1,49 @@
+
+<div class="row rowstyle">
+    <div class="col col-sm-2" style=" display: flex;align-items: center;justify-content: center;"  (click)="CollapseData=!CollapseData">
+      {{promjena.opis}}
+    </div>
+    <div class="col col-sm-4"style=" display: flex;align-items: center;justify-content: center;"  (click)="CollapseData=!CollapseData">
+      {{kategorijaPromjene.nazivKategorije}}
+    </div>
+    <div class="col col-sm-3">
+      <select class="form-control" [disabled]="disableRazvojnitim">
+        <option>Nije postavljeno</option>
+        <option>tpribisic1</option>
+      </select> 
+    </div>
+  <div class="col col-sm-3">
+    <select [className]=defaultStatus.style *ngIf="!Komitet"(ngModelChange)="setStatus($event)" [(ngModel)]="defaultStatus" [disabled]="disableStatus">
+        <option *ngFor="let status of Statuses" [(ngValue)]="status" >
+          {{status.text}}
+        </option>
+      </select>
+      <select [className]=default.style *ngIf="Komitet" (ngModelChange)="setPrioritet($event)" [(ngModel)]="default" >
+        <option *ngFor="let prioritet of Prioriteti" [(ngValue)]="prioritet">
+          {{prioritet.text}}
+        </option>
+      </select>
+  </div>
+  <div class="col col-sm-12"[ngbCollapse]="CollapseData">
+    <div class="row">
+        <div class="col">Prijavio: {{prijavio.username}}</div>
+        <div class="col">Datum kreiranja: {{kreiran.toLocaleDateString()}}</div>
+        <div class="col">Zadnja izmjena: {{izmjenjen.toLocaleDateString()}}</div>
+      </div>
+      <div class="row">
+        <div class="col">odobreno:{{odobreno}} </div>
+        <div class="col">Odobrava: {{odobrio}}</div>
+        <div class="col"*ngIf="!Komitet">Prioritet: {{Prioriteti[0].text}}</div> 
+        <div class="col"*ngIf="Komitet">Status: {{Statuses[0].text}}</div> 
+      </div>
+      <div class="row">    
+        <input *ngIf="Helpdesk" class="button glow-button col" type="button"value="Započni"(click)="start()">
+        <input *ngIf="Helpdesk" class="button glow-button col" type="button"value="Pošalji"(click)="send()">
+        <input class="button glow-button col" type="button"value="Izbriši" (click)="delete()">
+        <input *ngIf="Developer" class="button glow-button col" type="button"value="Arhiviraj">
+        <input *ngIf="Komitet" class="button glow-button col" type="button"value="PSO">
+        <input *ngIf="Komitet" class="button glow-button col" type="button"value="Odobri"(click)="approve()">
+       </div>
+  </div>
+  </div>
+

@@ -1,0 +1,9 @@
+{
+
+    "verbose":false,
+
+    "watch":"./src",
+
+    "exec":"webpack && node ./dist/main.js"
+
+}

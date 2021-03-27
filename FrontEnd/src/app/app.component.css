@@ -1,0 +1,30 @@
+p {
+  font-family: Lato;
+}
+.image{
+  position:relative;
+  background-size: cover;
+    background-image: url('https://thumbs.gfycat.com/CostlyGracefulAfricanclawedfrog-size_restricted.gif'); /*https://i.imgur.com/0C3MKgn.jpg*/
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  min-height: 100%;
+  width: 100%;
+  display: table;
+}
+app-header,
+router-outlet,
+app-footer{
+  display: table-row;
+}
+
+app-header {
+ height: 60px;
+}
+
+router-outlet {
+  position: absolute;
+}
+
+app-footer {
+  height: 70px;
+}

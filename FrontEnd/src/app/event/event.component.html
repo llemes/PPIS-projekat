@@ -1,0 +1,30 @@
+
+<div class="row rowstyle">
+  <div class="col col-sm-4" style=" display: flex;align-items: center;justify-content: center;" (click)="CollapseData=!CollapseData">
+    {{greska.dogadjaj}}
+  </div>
+  <div class="col col-sm-4"style=" display: flex;align-items: center;justify-content: center;" (click)="CollapseData=!CollapseData">
+    Tip događaja: {{tipDogadjaja.tipDogadjaja}}
+  </div>
+<div class="col col-sm-4">
+  <select [className]=default.style (ngModelChange)="setStatus($event)" [(ngModel)]="default" [disabled]="disableStatus">
+      <option *ngFor="let status of Statuses" [(ngValue)]="status" >
+        {{status.text}}
+      </option>
+    </select>
+</div>
+<div class="col col-sm-12"[ngbCollapse]="CollapseData">
+  <div class="row">
+      <div class="col">Prijavio: {{ inicijator.username }}</div>
+      <div class="col">Datum kreiranja: {{kreiran.toLocaleDateString()}}</div>
+    </div>
+    <div class="row">
+      <div class="col">Zadnja izmjena: {{izmjenjen.toLocaleDateString()}}</div>
+      <div class="col">Prioritet: {{prioritet.naziv}}</div> 
+    </div>
+    <div class="row">    
+      <input class="button glow-button col" type="button"value="Izbriši" (click)="delete()">
+     </div>
+</div>
+</div>
+

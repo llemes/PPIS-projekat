@@ -1,0 +1,84 @@
+.rowstyle{
+    margin: 1%;
+    -webkit-box-shadow: 8px 10px 23px 0.1px rgba(3,19,31,1);
+    -moz-box-shadow: 8px 10px 23px 0.1px rgba(3,19,31,1);
+    box-shadow: 8px 10px 23px 0.1px rgba(3,19,31,1);
+    color: white;
+  }
+  .subrow{
+    margin: 0%;
+    color: white;
+    background-color: #0E4168;
+  }
+  .col{
+    background-color: #0E4168;
+    
+  
+  }
+  .controlBtn{
+    text-align: end;
+    vertical-align: bottom
+  }
+  .form-control{
+    background-color:#0E4168;
+    color: white;
+    margin-top: 5%;
+    margin-bottom: 5%
+  }
+  .form-status-greska{
+    background-color:grey;
+  }
+  .form-status-cekanje{
+    background-color: rgb(119, 121, 3);
+  }
+  .form-status-uToku{
+    background-color: rgb(1, 86, 151)
+  }
+  .form-status-zavrseno{
+    background-color: rgb(2, 129, 57)
+  }
+  .btn-status{
+    display: block;
+    width: 100%;
+    border: none;
+  }
+  .button {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.8);
+    background: rgb(5, 40, 66);
+    padding: 6px 9px;
+    border-radius: 4px;
+    font-weight: normal;
+    text-transform: uppercase;
+    transition: all 0.2s ease-in-out;
+    border: none;
+    margin: 1%;
+    margin-top: 5%;
+  
+  }
+  
+  .glow-button:hover {
+    color: rgba(255, 255, 255, 1);
+    background: rgb(26, 118, 194);
+    box-shadow: 0 5px 15px rgba(36, 156, 255, 0.6);
+  }
+  .form-prioritet-jn{
+    color:white;
+    background-color: green;
+}
+.form-prioritet-n{
+    color:white;
+    background-color: blue;
+}
+.form-prioritet-s{
+    color:white;
+    background-color: orange;
+}
+.form-prioritet-v{
+    color:black;
+    background-color: yellow;
+}
+.form-prioritet-jv{
+    color:white;
+    background-color: red;
+}

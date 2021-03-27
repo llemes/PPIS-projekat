@@ -1,0 +1,52 @@
+.row{
+    padding: 0%;
+  }
+  .col{
+    border: 1px solid white;
+  }
+  .btn{
+    background-color:#0E4168;
+    color: white;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 5%;
+    float: right
+  }
+hr{
+  border-top: 1px solid white;
+}
+table thead th { color: white; font-size:10pt; }
+legend{
+  color:white;
+}
+.card{
+  background:rgba(14, 65, 104, 0.6);
+  margin: 5% 5% 5% 15%;
+  width: 70%;
+  padding: 2%;
+}
+.button-user{
+  display:inline-block;
+  padding: 5px 15px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: rgba(14, 65, 104, 0.6);
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 5px #999;
+}
+.button-user:hover{
+  background-color: rgba(14, 65, 104, 0.6);
+}
+.button-user:active{
+  background-color:rgba(14, 65, 104, 0.6);
+  box-shadow: 0 3px #666;
+  transform: translateY(2px);
+}
+td{
+  color:white;
+}
