@@ -6,6 +6,7 @@ import {Korisnik} from '../_services/korisnik'
 import {Router} from "@angular/router"
 import {AuthService} from '../_services/auth.service'
 
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -15,6 +16,28 @@ export class HeaderComponent implements OnInit {
 
   loggedUser:Korisnik;
   loggedIn:boolean
+  public items = [
+         {
+           class:"homepage",
+           label: "Home page",
+           url: "/home"
+         },
+         {
+          class:"page",
+          label: "About us",
+          url: "/about"
+        },
+        {
+          class:"site",
+          label: "Our clients",
+          url: "/ourclients"
+        },
+        {
+          class:"site",
+          label: "Contact",
+          url: "/contactus"
+        },
+  ]
   constructor(private modalService: NgbModal ,public modal: ModalService,private router:Router, private auth:AuthService) {
     this.loggedIn=false;
    }
@@ -36,6 +59,10 @@ export class HeaderComponent implements OnInit {
     this.loggedIn=false;
     this.auth.token=undefined;
 
+  }
+
+  navigate(url:any){
+    this.router.navigate([url])
   }
 
 }

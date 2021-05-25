@@ -21,7 +21,7 @@ import {APP_BASE_HREF} from '@angular/common';
 import { HelpdeskEventsComponent } from './helpdesk-events/helpdesk-events.component';
 import {ReportWrapperComponent} from './report-wrapper/report-wrapper.component'
 import { ReportComponent } from './report/report.component';
-import {ChartsModule} from 'ng2-charts';
+//import {ChartsModule} from 'ng2-charts';
 import { ChangeRequestComponent } from './change-request/change-request.component';
 import { CommitteeWrapperComponent } from './committee-wrapper/committee-wrapper.component';
 import { ChangeCommitteeComponent } from './change-committee/change-committee.component';
@@ -33,7 +33,7 @@ import { IdeaComponent } from './idea/idea.component';
     NgbModule,
     HttpClientModule, 
     ReactiveFormsModule,
-    ChartsModule,
+    //ChartsModule,
     RouterModule.forRoot([
       {path:'', component:IdeaComponent},
       {path:'helpdesk', component: WrapperComponent},

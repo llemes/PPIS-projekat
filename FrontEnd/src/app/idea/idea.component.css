@@ -18,3 +18,33 @@
         width: 33%;
     }
 }
+
+.welcome{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 45px
+}
+.welcome-wrapper{
+    display: flex;
+    flex-direction: column;
+}
+.cards{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: 80px;
+    padding-left: 80px;
+}
+.cards .card{
+    display:flex;
+}
+.cards .card img{
+    width: 390px;
+    height: 235px;
+}
+.cards .card .text{
+    width: 390px;
+    text-align: center;
+    padding: 10px
+}

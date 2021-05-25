@@ -8,7 +8,7 @@ const app = express();
 const models = require('./models/index');
 const config = require('./config/configuration.js')
 
-// models.sequelize.sync();
+//models.sequelize.sync();
 
 const ulogaRoutes = require('./routes/uloga.router');
 const kategorijaPromjeneRoutes = require('./routes/kategorijapromjene.router')

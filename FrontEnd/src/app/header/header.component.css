@@ -1,0 +1,42 @@
+.header{
+    background-color: white;
+    height: 55px;
+    display:flex;
+}
+.logo{
+    padding: 10px;
+    flex: 1 1 100%
+}
+img{
+    height: 35px;
+}
+.items{
+    display: flex;
+    flex: 1 1 100%;
+    
+}
+.items span{
+    flex: 1 1 100%; 
+    font-size: 20px;
+    padding-top: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.login{
+    flex: 1 1 100%;
+    padding-right: 15px;
+}
+.login span{
+    float: right;
+    font-size: 20px;
+    padding-top: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+.login span i{
+    padding-right: 5px;
+}
+.homepage{
+    color: rgb(149,205,222);
+}

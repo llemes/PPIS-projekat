@@ -1,0 +1,11 @@
+.menu{
+    color: black;
+}
+.active{
+    color: black !important;
+    border-bottom: 1px solid #3c666d;
+}
+.col{
+    padding-right: 0px !important;
+    border-right: 1px solid black;
+}

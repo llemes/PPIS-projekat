@@ -1,6 +1,6 @@
 :host ::ng-deep .modal-header {
     color: #FFFFFF;
-    background:rgba(14, 65, 104, 0.7);
+    background-color:rgb(71,170,165);
     border-color: #0E4168;
     font-size: 18px;
     text-align: center
@@ -10,8 +10,8 @@
     font-size: 19px
   }
   .modal-body{
-    background:rgba(7, 31, 50, 0.8);
-    color: #FFFFFF;
+    background:white;
+    color: black;
     padding: 5%;
   
   }
@@ -24,7 +24,7 @@
     padding-top: 5%;
   }
   .btn{
-    background-color:#0E4168;
+    background-color:rgb(71,170,165);
     color: white;
     margin-top: 5px;
     margin-bottom: 5px;
@@ -36,10 +36,10 @@
   }
 
   .input{
-    background-color:#0E4168;
+    background-color: #f3f3f3;
     border-color: white;
     border: 1px;
-    color: white;
+    color: black
   }
 
   .naslov{
@@ -63,7 +63,7 @@
   
   }
   .modal-header{
-    background:rgba(14, 65, 104, 0.9);
+    background-color:rgb(71,170,165);
     border-top-left-radius: 0rem;
     border-top-right-radius: 0rem;
   }
