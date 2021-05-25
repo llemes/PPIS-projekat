@@ -1,12 +1,28 @@
-<nav class="navbar navbar-expand-lg" style="background:#0E4269;">
+<!--<nav class="navbar navbar-expand-lg" style="background:#000000;">
   <img class="img-fluid" src="https://i.imgur.com/RZlKYeU.png" style="width:10%; opacity: 0.3;">
   <div class="collapse navbar-collapse" id="navbarText">
     <ul class="navbar-nav mr-auto">
 
     </ul>
   <img class="pull-right" src="https://i.imgur.com/wmLzN5m.png" style="width:5%"/>
-  <!--<button class = "navbar-brand" style="padding-left: 1%" (click)="openLogin()">Log in</button>-->
+<button class = "navbar-brand" style="padding-left: 1%" (click)="openLogin()">Log in</button>
    <a *ngIf ="!loggedIn" class="navbar-brand" href="#" (click)="openLogin()" style="padding-left:1%"><h3>Prijava</h3></a> 
    <a *ngIf ="loggedIn"  class="navbar-brand" href="#" (click)="logout()" style="padding-left:1%"><h3>Odjava</h3></a> 
   </div>
 </nav>
+-->
+
+<div class="header">
+  <div class="logo">
+  <img src="../../assets/Friends-Logo-500x315.jpg">
+  </div>
+  <div class="items">
+    <span class="{{item.class}}" (click)="navigate(item.url)" *ngFor="let item of items">
+      {{item.label}}
+    </span>
+  </div>
+  <div (click)="openLogin()" class="login">
+    <span><i class="fas fa-sign-in-alt"></i>Log in</span>
+  </div>
+
+</div>

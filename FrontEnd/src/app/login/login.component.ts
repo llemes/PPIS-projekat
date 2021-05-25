@@ -78,8 +78,9 @@ export class LoginComponent implements OnInit {
       const decodedToken = helper.decodeToken(data.token);
       console.log(decodedToken);
       this.closeModal();
+      console.log(decodedToken.ulogaId);
       switch(decodedToken.ulogaId){
-        case 0:
+        case 4:
           this.router.navigate(['../korisnik'])
           break;
         case 1:

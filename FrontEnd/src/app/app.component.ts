@@ -10,7 +10,7 @@ import {Router} from "@angular/router"
   styleUrls: [ './app.component.css' ]
 })
 export class AppComponent  {
-  name = 'Team VII';
+  name = 'Rocket Raccoon';
 
   constructor(public modalService: ModalService, private router:Router) {
   }
